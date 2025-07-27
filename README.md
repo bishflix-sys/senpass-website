@@ -1,53 +1,147 @@
-> Edited for use in IDX on 07/09/12
 
-# Welcome to your Expo app 👋
+# 🇸🇳 Senpass – Plateforme d'Identité Numérique du Sénégal
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Senpass** est une plateforme numérique sécurisée qui permet aux citoyens, résidents et entreprises du **Sénégal** d'accéder facilement à des services publics et privés via une **identité numérique centralisée**. Inspirée de Singpass (Singapour), Senpass vise à accélérer la transformation numérique de l'administration sénégalaise et à renforcer la confiance numérique.
 
-## Get started
+---
 
-#### Android
+## 🎯 Objectifs
 
-Android previews are defined as a `workspace.onStart` hook and started as a vscode task when the workspace is opened/started.
+- Offrir une **authentification unique (SSO)** sécurisée pour les services numériques.
+- Centraliser l’accès aux **services publics** : état civil, santé, fiscalité, éducation, etc.
+- Fournir une **application mobile sécurisée** pour accéder aux services à tout moment.
+- Permettre la **signature électronique** de documents officiels.
+- Favoriser l’**inclusion numérique** pour tous les citoyens, en particulier les zones rurales.
 
-Note, if you can't find the task, either:
-- Rebuild the environment (using command palette: `IDX: Rebuild Environment`), or
-- Run `npm run android -- --tunnel` command manually run android and see the output in your terminal. The device should pick up this new command and switch to start displaying the output from it.
+---
 
-In the output of this command/task, you'll find options to open the app in a
+## 🚀 Fonctionnalités principales
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🔐 Authentification via mot de passe, OTP, biométrie (empreinte / reconnaissance faciale)
+- 📱 Application mobile Android/iOS (Senpass App)
+- 🧾 Accès à des documents officiels numériques (CNI, actes, etc.)
+- ✅ Vérification d’identité en ligne (KYC pour services privés et publics)
+- 🌐 Interface multilingue : français, wolof, anglais
+- 🛡️ Sécurité de niveau gouvernemental (chiffrement, pare-feux, RGPD)
 
-You'll also find options to open the app's developer menu, reload the app, and more.
+---
 
-#### Web
+## 🏗️ Stack technique
 
-Web previews will be started and managred automatically. Use the toolbar to manually refresh.
+- **Frontend** : React.js (Next.js), Tailwind CSS
+- **Backend** : Node.js (Express) ou Django REST Framework
+- **Mobile App** : Flutter ou React Native
+- **Base de données** : PostgreSQL / MongoDB
+- **API** : RESTful / GraphQL (Swagger/OpenAPI)
+- **Authentification** : OAuth 2.0, OpenID Connect, JWT, MFA
+- **Hébergement** : Cloud souverain (SenCloud), AWS ou Azure
+- **Sécurité** : TLS, HTTPS, WAF, monitoring SIEM, chiffrement AES-256
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📁 Structure du projet
 
-When you're ready, run:
-
-```bash
-npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+senpass/
+├── frontend/       → Interface web React
+├── mobile/         → App mobile Flutter ou React Native
+├── backend/        → API REST, services auth
+├── database/       → Modèles et scripts SQL
+├── docs/           → Documentation technique/fonctionnelle
+└── README.md       → Ce fichier
 
-## Learn more
+````
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🧪 Installation locale (développement)
 
-## Join the community
+### Prérequis
 
-Join our community of developers creating universal apps.
+- Node.js ≥ 18
+- PostgreSQL ≥ 13
+- Docker (optionnel)
+- Git
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Étapes
+
+```bash
+# Cloner le dépôt
+git clone https://github.com/ton-org/senpass.git
+cd senpass
+
+# Lancer le frontend
+cd frontend
+npm install
+npm run dev
+
+# Lancer le backend
+cd ../backend
+npm install
+npm run dev
+
+# Démarrer PostgreSQL avec Docker
+docker-compose up
+````
+
+---
+
+## 📲 Application mobile
+
+* Développée avec **Flutter** (compatible Android/iOS)
+* Connexion biométrique (Touch ID, Face ID)
+* Notification push, scan QR code, téléchargement de documents officiels
+* Accès hors ligne aux données cryptées
+* \[Lien à venir pour téléchargement sur Play Store et App Store]
+
+---
+
+## 🔐 Sécurité & confidentialité
+
+* Chiffrement bout-à-bout (AES-256)
+* Connexions sécurisées (HTTPS, TLS 1.3)
+* Authentification multifacteur (MFA)
+* Journalisation et surveillance des accès
+* Conformité RGPD & Loi sénégalaise sur la protection des données
+
+---
+
+## 👥 Équipe & partenaires
+
+* **Ministère du Numérique et des Télécommunications (Sénégal)**
+* **Agence de l’informatique de l’État (ADIE)**
+* Développeurs : \[Ton nom], \[autres membres]
+* Design UX/UI : \[Nom du designer]
+* Sécurité / DevOps : \[Responsable sécurité]
+
+---
+
+## 🧑‍💻 Contribution
+
+Les contributions sont bienvenues !
+Consultez le fichier `CONTRIBUTING.md` pour les règles et consignes.
+
+1. Forkez ce repo
+2. Créez une branche (`git checkout -b feature/xyz`)
+3. Commitez vos modifications (`git commit -am 'Add feature xyz'`)
+4. Poussez votre branche (`git push origin feature/xyz`)
+5. Créez une Pull Request
+
+---
+
+## 📄 Licence
+
+Projet sous licence MIT.
+© 2025 Gouvernement du Sénégal – Tous droits réservés.
+
+---
+
+## 🔗 Liens utiles
+
+* 📄 Documentation API : `docs/api.md`
+* 📱 Site officiel : [www.senpass.sn](https://www.senpass.sn) *(placeholder)*
+* 🛂 Ministère du Numérique : [www.numerique.gouv.sn](https://www.numerique.gouv.sn)
+* ✉️ Contact technique : [dev@senpass.sn](mailto:dev@senpass.sn)
+
+```
